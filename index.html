@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Merchants Fixture - 3D Designer</title>
+    <script>
+      if (window.location.hostname.startsWith('www.')) {
+        const newHostname = window.location.hostname.replace('www.', '');
+        const newUrl = `${window.location.protocol}//${newHostname}${window.location.pathname}${window.location.search}${window.location.hash}`;
+        window.location.assign(newUrl);
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+    
+  </head>
+  <body>
+    <script type="module" src="src/main.jsx"></script>
+    <!-- REACT APP -->
+    <div id="app"></div>
+
+    <!-- HowTo Modal -->
+
+    <div
+      class="modal fade"
+      id="howToModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><b>How To...</b></h5>
+            <button
+              type="button"
+              id="howToModalClose"
+              class="close howto-modal-close"
+              data-dismiss="modal"
+              style="margin-top: -20px"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div style="display: flex; flex-direction: row; flex-wrap: nowrap">
+              <div class="instructions">
+                <div class="howto_section" id="section_steps">
+                  <div class="instructions_div" id="steps_header">
+                    <img
+                      class="logo"
+                      src="/merchants-fixture-logo.png"
+                      alt="Merchants Fixture"
+                    />
+                    <div class="title">
+                      <h1><span style="color:#d1a52c">3D</span> <span style="color:#db3f28">Designer</span></h1>
+                      <h2><span style="color:#a02921">Step-by-Step</span></h2>
+                    </div>
+                  </div>
+                  <div class="instructions_div" id="step_1">
+                    <div class="step_number" style="background-color:#d1a52c;">1</div>
+                    <div class="title">
+                      <h3>Measure Space</h3>
+                      <p>Measure the areas of the store you plan on adding or replacing cabinets.</p>
+                    </div>
+                    <div id="step_image">
+                      <img src="/how_to_step_1.jpg" alt="Measure Space">
+                    </div>
+                  </div>
+                  <div class="instructions_div" id="step_2">
+                    <div class="step_number" style="background-color:#bb7128;">2</div>
+                    <div class="title">
+                      <h3>Add Fixtures</h3>
+                      <p>Choose category of cabinets that best fits the area you are designing. The cabinets for each category will display in the right-sidebar. <a href="#how_to_fixtures" title="Learn more...">Learn more...</a></p>
+                    </div>
+                    <div id="step_image">
+                      <img src="/how_to_step_2.jpg" alt="Add Fixtures">
+                    </div>
+                  </div>
+                  <div class="instructions_div" id="step_3">
+                    <div class="step_number" style="background-color:#db5f28;">3</div>
+                    <div class="title">
+                      <h3>Select Colors</h3>
+                      <p>Choose one of eight laminate Cabinet colors and one of twelve solid surface Countertop colors.</p>
+                    </div>
+                    <div id="step_image">
+                      <img src="/how_to_step_3.jpg" alt="Select Colors">
+                    </div>
+                  </div>
+                  <div class="instructions_div" id="step_4">
+                    <div class="step_number" style="background-color:#db3f28;">4</div>
+                    <div class="title">
+                      <h3>Layout Cabinets</h3>
+                      <p>Drag-and-drop the cabinets from the right-sidebar onto your design. Then drag/drop and rotate the cabinets to best fit the floorplan of your store. <a href="#section_design_views" title="Learn more...">Learn more...</a></p>
+                    </div>
+                    <div id="step_image">
+                      <img src="/how_to_step_4.jpg" alt="Layout Cabinets">
+                    </div>
+                  </div>
+                  <div class="instructions_div" id="step_5">
+                    <div class="step_number" style="background-color:#a02921;">5</div>
+                    <div class="title">
+                      <h3>Request A Quote</h3>
+                      <p>Submit your design for a quote and recieve a response in 1-2 buisness days. <a href="#section_request_quote" title="Learn more...">Learn more...</a></p>
+                    </div>
+                    <div id="step_image">
+                      <img src="/how_to_step_5.jpg" alt="Request A Quote">
+                    </div>
+                  </div>
+                </div>
+                <div class="howto_section" id="section_project_files">
+                  <h3>Project Files</h3>
+                  <div class="instructions_div" id="how_to_new_project">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-new.png"
+                      alt="New Project"
+                    />
+                    Click this link to reload the design app. Be sure to save
+                    any designs that are currently on the screen or the will be
+                    lost.
+                  </div>
+                  <div class="instructions_div" id="how_to_save_project">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-save.png"
+                      alt="Save Project"
+                    />
+                    Click this link to save a design file that is currently on
+                    the screen. You will be prompted to save a .JSON file to our
+                    computer that you can share with others and upload at a
+                    later time to continue working.
+                  </div>
+                  <div class="instructions_div" id="how_to_load_project">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-load.png"
+                      alt="Load Project"
+                    />
+                    Click this link to load a design file you previously saved
+                    or tha someone has shared with you. The file must be a .JSON
+                    format created by this design app.
+                  </div>
+                  <div class="instructions_div" id="how_to_get_screenshot">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-screenshot.png"
+                      alt="Get Screenshot"
+                    />
+                    Click this linkto save a file of the design you are
+                    currently working on. You will be prompted to save an image
+                    file to you computer.
+                  </div>
+                  <div class="instructions_div" id="how_to_undo">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-undo.png"
+                      alt="Undo Action"
+                    />
+                    Click this link to undo the last action you performed on
+                    your design.
+                  </div>
+                </div>
+                <div class="howto_section" id="section_design_views">
+                  <h3>Design Views</h3>
+                  <div class="instructions_div" id="how_to_2d">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-2d.png"
+                      alt="2D View"
+                    />
+                    This is the two-dimensional view where you will drop
+                    cabinets onto the grid and rearrange to meet your design
+                    needs.<br /><br />
+                    Once an object is on the grind, you can drag it around to
+                    change its location as well as rotate the object to change
+                    its orientation.
+                  </div>
+                  <div class="instructions_div" id="how_to_3d">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-3d.png"
+                      alt="3D View"
+                    />
+                    After you have added fixtures to the 2D View, click the 3D
+                    View to see what the design will look like. You can click
+                    and drag the screen to change the angle of the view
+                    (up/down, left/right)
+                  </div>
+                </div>
+                <div class="howto_section" id="how_to_fixtures">
+                  <h3>Fixtures</h3>
+                  <div class="instructions_div" id="how_to_add">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-add.png"
+                      alt="Add Fixtures"
+                    />
+                    Cilck on the categories in this section will display all of
+                    the available fixtures. When you find a fixture you would
+                    like to add to your design, Click the fixture to select it,
+                    then click the grid in the 2D view to add it to your design.
+                    You can then click & drag the item around to place where you
+                    would like it to be in your design.<br /><br />
+                    While a fixture is selected, you can also change the "Top" &
+                    "Body" properties on the right side column to change the
+                    materials.<br /><br />
+                    Also, while a fixture is selected, you will cee a circle
+                    surrounding the fixture. If click & drag on the dot on this
+                    circle, you can rotate the object to change its
+                    orientaion.<br /><br />
+                    To remove a ficture, select the item and then click the
+                    "delete" key on your keyboard and it will dissappear.
+                  </div>
+                </div>
+                <div class="howto_section" id="section_request_quote">
+                  <h3>Request a Quote</h3>
+                  <div class="instructions_div" id="how_to_request_quote">
+                    <img
+                      class="menu_link_img"
+                      src="vendor/howto/menu-quote.png"
+                      alt="Request a Quote"
+                    />
+                    Cilck on the button to open the "Request a Quote" form. Fill
+                    in your contact information plas any questions or comments.
+                    Once complete, click Submit and the design app will email
+                    your design to Merchants Fixture. One of our professional
+                    designers will review your design, contact you with any
+                    questions and send you a quote for your project.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUOTE Modal -->
+    <div
+      class="modal fade"
+      id="quoteModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Request a Quote</h5>
+            <button
+              type="button"
+              id="exampleModalClose"
+              class="close quote-modal-close"
+              data-dismiss="modal"
+              style="margin-top: -20px"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <!-- Default form register -->
+          <form class="text-center border border-light p-5" id="quoteForm">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-8 col-sm-offset-2">
+                  <p class="text-info">
+                    Send us your design for an experienced designer to check
+                    your design and then send you a quote.
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="formFirstName"
+                      class="form-control"
+                      placeholder="First name"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="formLastName"
+                      class="form-control"
+                      placeholder="Last name"
+                      required=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      id="formEmail"
+                      class="form-control mb-4"
+                      placeholder="E-mail"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-control"
+                      placeholder="Phone"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <textarea
+                      name="address"
+                      id="address"
+                      rows="3"
+                      class="form-control"
+                      placeholder="Address"
+                      required=""
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="formCity"
+                      class="form-control mb-4"
+                      placeholder="City"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <select
+                      name="state"
+                      id="formState"
+                      class="form-control"
+                      required=""
+                    >
+                      <option value="">State</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL">Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      id="ZIP"
+                      class="form-control"
+                      placeholder="ZIP"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="formFillersQuantity" class="formLabel">
+                      Does this project require any fillers? (optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="formFillersQuantity"
+                      class="form-control"
+                      placeholder="Quantity"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="formBackSplashLength" class="formLabel">
+                      Does this project require extra backsplash? (optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="formBackSplashLength"
+                      class="form-control"
+                      placeholder="Length"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="formCoveBase" class="formLabel">
+                      Does this project require cove base? (optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="formCoveBase"
+                      class="form-control"
+                      placeholder="Length"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="formCountertopOverhang" class="formLabel">
+                      Does this project require additional countertop overhang? (optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="formCountertopOverhang"
+                      class="form-control"
+                      placeholder="Length"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <textarea
+                      name="comments"
+                      id="comments"
+                      rows="3"
+                      class="form-control"
+                      placeholder="Questions/Comments"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sign up button -->
+
+              <!-- Social register -->
+
+              <!-- Terms of service -->
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-info my-4" id="submitBtn" type="submit">
+                Submit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger quote-modal-close"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </form>
+          <!-- Default form register -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

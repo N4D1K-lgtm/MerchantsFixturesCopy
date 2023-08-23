@@ -1,0 +1,20 @@
+﻿
+newmtl Material-0
+Kd 0.7 0.7 0.7
+Ka 0.01 0.01 0.01
+Ks 0.01 0.01 0.01
+d 1
+
+newmtl texture
+Kd 1 1 1
+Ka 0 0 0
+Ks 0.5 0.5 0.5
+d 1
+map_Kd 290_classic_maple.png
+
+newmtl texture1
+Kd 1 1 1
+Ka 0 0 0
+Ks 0.5 0.5 0.5
+d 1
+map_Kd dm3012_silver_falls.png

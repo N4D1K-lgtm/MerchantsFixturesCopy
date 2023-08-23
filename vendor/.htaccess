@@ -1,0 +1,7 @@
+AddType application/x-httpd-php7 .php
+Action application/x-httpd-php7 /fcgi-bin/php74_wrapper.sh
+
+Options -Indexes
+
+RewriteEngine On
+RewriteRule ^send-email$ /vendor/send_email_api.php [L]
