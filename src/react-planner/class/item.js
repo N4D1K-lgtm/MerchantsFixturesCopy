@@ -55,7 +55,12 @@ class Item {
     state = state.setIn(["scene", "layers", layerID, "items", itemID], item);
 
     // Set the item's properties and update the state
-    let { updatedState } = Item.setProperties(state, layerID, item.id, properties);
+    let { updatedState } = Item.setProperties(
+      state,
+      layerID,
+      item.id,
+      properties
+    );
     state = updatedState;
 
     return { updatedState: state, item };
@@ -145,6 +150,7 @@ class Item {
     let catalog = state.catalog;
     state = this.updateDrawingItem(state, layerID, x, y, catalog).updatedState;
     state = Layer.unselectAll(state, layerID).updatedState;
+    console.log("ended drawing");
     state = state.merge({
       drawingSupport: Map({
         type: state.drawingSupport.get("type"),
@@ -182,12 +188,24 @@ class Item {
     let itemID = draggingSupport.get("itemID");
     let cursorOffsetX = draggingSupport.get("cursorOffsetX"); // Modify this line
     let cursorOffsetY = draggingSupport.get("cursorOffsetY"); // Modify this line
-
+    console.log("updating");
     // Calculate the new position of the item considering the cursor offset
     let newX = x - cursorOffsetX;
     let newY = y - cursorOffsetY;
 
-    // console.log("x: " + x + " " +"originalX: " + originalX + " " + "cursorOffsetX " + cursorOffsetX + " " + "newX: " + newX);
+    console.log(
+      "x: " +
+        x +
+        " " +
+        "originalX: " +
+        originalX +
+        " " +
+        "cursorOffsetX " +
+        cursorOffsetX +
+        " " +
+        "newX: " +
+        newX
+    );
 
     // Add snapping logic
     let snapElements = SnapSceneUtils.sceneSnapElements(

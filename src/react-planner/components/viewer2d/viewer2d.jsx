@@ -134,22 +134,27 @@ export default function Viewer2D(
   // Add this useEffect hook to call fitToViewer when the component mounts
   React.useEffect(() => {
     fitToViewer();
-    
+
     const handleToolbarLoadEvent = () => {
       fitToViewer();
     };
 
-    const toolbarLoadButton = document.getElementById('toolbar-load-button');
-    if(!toolbarLoadButton) {
-      return
+    const toolbarLoadButton = document.getElementById("toolbar-load-button");
+    if (!toolbarLoadButton) {
+      return;
     } else {
-      toolbarLoadButton.addEventListener('toolbar-load-event', handleToolbarLoadEvent);
-
+      toolbarLoadButton.addEventListener(
+        "toolbar-load-event",
+        handleToolbarLoadEvent
+      );
     }
 
     // Clean up the event listener when the component is unmounted
     return () => {
-      toolbarLoadButton.removeEventListener('toolbar-load-event', handleToolbarLoadEvent);
+      toolbarLoadButton.removeEventListener(
+        "toolbar-load-event",
+        handleToolbarLoadEvent
+      );
     };
   }, []);
 
@@ -406,7 +411,8 @@ export default function Viewer2D(
     focus: false,
   };
   return (
-    <div id="main-react-planner"
+    <div
+      id="main-react-planner"
       style={{
         margin: 0,
         padding: 0,
